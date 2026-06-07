@@ -137,8 +137,8 @@
       "id": 5,
       "targets": [
         {
-          "expr": "sum(rate(container_cpu_usage_seconds_total{name=~\".*(backend|db|redis).*\"}[1m])) by (name)",
-          "legendFormat": "{{name}}"
+          "expr": "sum(rate(container_cpu_usage_seconds_total{id!=\"/\", cpu=\"total\"}[1m])) by (id)",
+          "legendFormat": "{{id}}"
         }
       ],
       "title": "CPU por contenedor",
@@ -164,8 +164,8 @@
       "id": 6,
       "targets": [
         {
-          "expr": "container_memory_working_set_bytes{name=~\".*(backend|db|redis).*\"}",
-          "legendFormat": "{{name}}"
+          "expr": "container_memory_working_set_bytes{id!=\"/\"}",
+          "legendFormat": "{{id}}"
         }
       ],
       "title": "Memoria por contenedor",

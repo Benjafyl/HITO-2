@@ -8,6 +8,7 @@ observabilidad.
 
 | Archivo | Evidencia |
 | --- | --- |
+| `screenshots/01-docker-compose-ps.jpeg` | Servicios Docker levantados: backend, frontend, db, redis, Prometheus, Grafana, cAdvisor y Locust |
 | `screenshots/02-endpoints-api.jpeg` | Prueba parcial de endpoints (`health`, `flights`, `routes`) |
 | `screenshots/02b-endpoints-api-completo.jpeg` | Prueba completa de endpoints (`health`, `flights`, `routes`, `aircraft`) |
 | `screenshots/03-redis-ping.jpeg` | Redis responde `PONG` |
@@ -21,6 +22,8 @@ observabilidad.
 | `screenshots/11-grafana-before-cache.jpeg` | Cache hit ratio y hits/misses en escenario before |
 | `screenshots/12-grafana-after-dashboard.jpeg` | Dashboard Grafana en escenario after Redis |
 | `screenshots/13-grafana-after-cache.jpeg` | Cache hit ratio y hits/misses en escenario after Redis |
+| `screenshots/14-frontend.jpeg` | Frontend React funcionando en `http://localhost:3002` |
+| `screenshots/15-api-docs.jpeg` | Swagger/API Docs funcionando en `http://localhost:8001/docs` |
 
 ## CSV de Locust incluidos
 
@@ -50,8 +53,6 @@ observabilidad.
 - Captura de Swagger/API Docs en `http://localhost:8001/docs`.
 - Captura del resumen final de Locust para before y after.
 
-Nota: en las capturas actuales de Grafana, los paneles de CPU y memoria aparecen
-sin datos. Prometheus si scrapea cAdvisor, pero en este entorno Docker Desktop no
-esta exponiendo series por contenedor con nombres de servicio. Para el informe se
-puede mencionar esta limitacion del entorno local o repetir la captura en un
-entorno donde cAdvisor entregue metricas por contenedor.
+Nota: en Docker Desktop/WSL, cAdvisor puede exponer metricas con etiqueta `id`
+en vez de nombres de servicios Docker. El dashboard fue ajustado para mostrar
+CPU y memoria usando las series disponibles por `id`.
