@@ -10,7 +10,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
     ports:
-      - "5432:5432"
+      - "5433:5432"
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U skyconnect -d skyconnect"]
       interval: 5s
@@ -22,7 +22,7 @@ services:
     restart: unless-stopped
     command: redis-server --save "" --appendonly no
     ports:
-      - "6379:6379"
+      - "6380:6379"
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
@@ -39,7 +39,7 @@ services:
       FLIGHTS_CACHE_TTL: "60"
       CATALOG_CACHE_TTL: "300"
     ports:
-      - "8000:8000"
+      - "8001:8000"
     depends_on:
       db:
         condition: service_healthy
@@ -47,10 +47,13 @@ services:
         condition: service_healthy
 
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:8001
     restart: unless-stopped
     ports:
-      - "3000:80"
+      - "3002:80"
     depends_on:
       - backend
 

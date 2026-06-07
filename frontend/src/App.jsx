@@ -3,7 +3,7 @@ import axios from 'axios';
 import FlightSearch from './components/FlightSearch';
 import FlightList from './components/FlightList';
 
-const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:8000';
+const API_BASE = import.meta.env.VITE_API_URL ?? 'http://localhost:8001';
 
 export default function App() {
   const [flights,  setFlights]  = useState([]);

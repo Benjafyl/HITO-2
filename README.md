@@ -47,15 +47,15 @@ flowchart LR
 
 | Servicio | URL |
 | --- | --- |
-| Frontend | http://localhost:3000 |
-| Backend API | http://localhost:8000 |
-| API Docs | http://localhost:8000/docs |
+| Frontend | http://localhost:3002 |
+| Backend API | http://localhost:8001 |
+| API Docs | http://localhost:8001/docs |
 | Prometheus | http://localhost:9090 |
 | Grafana | http://localhost:3001 (`admin` / `admin`) |
 | Locust | http://localhost:8089 |
 | cAdvisor | http://localhost:8080 |
-| Redis | localhost:6379 |
-| PostgreSQL | localhost:5432 |
+| Redis | localhost:6380 |
+| PostgreSQL | localhost:5433 |
 
 ## Levantar el sistema
 
@@ -66,11 +66,11 @@ docker compose up --build
 Verificaciones rapidas:
 
 ```bash
-curl http://localhost:8000/health
-curl http://localhost:8000/flights
-curl http://localhost:8000/routes
-curl http://localhost:8000/aircraft
-curl http://localhost:8000/metrics
+curl http://localhost:8001/health
+curl http://localhost:8001/flights
+curl http://localhost:8001/routes
+curl http://localhost:8001/aircraft
+curl http://localhost:8001/metrics
 docker compose exec redis redis-cli ping
 ```
 
