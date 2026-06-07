@@ -53,10 +53,19 @@ Desde Grafana:
 
 ## Tabla para completar
 
-| Escenario | Avg /flights | P95 /flights | RPS | Fallos | Cache Hit Ratio |
+Resultados locales disponibles en `results/`:
+
+| Escenario | Requests /flights | Avg /flights | P95 /flights | RPS /flights | Fallos /flights |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Before | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
-| After Redis | Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| Before sin cache | 21928 | 7178.68 ms | 9300 ms | 73.17 | 0 |
+| After Redis | 19476 | 8218.20 ms | 11000 ms | 64.98 | 0 |
+
+Lectura tecnica: en esta ejecucion local no se observo una reduccion de latencia
+en el CSV de Locust, aunque si se verifico funcionamiento de Redis, cache hits,
+cache misses y 0 fallos. Para el informe, este resultado debe analizarse sin
+modificar datos: puede deberse a saturacion del entorno Docker Desktop local,
+carga residual entre pruebas, cache fria, o diferencias de recursos disponibles
+entre corridas.
 
 ## Capturas requeridas
 
@@ -67,3 +76,5 @@ ejemplo:
 - `results/grafana-after-redis.png`
 
 No editar manualmente CSV ni capturas.
+
+Las capturas disponibles estan descritas en `results/evidence-index.md`.
