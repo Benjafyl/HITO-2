@@ -24,6 +24,7 @@ observabilidad.
 | `screenshots/13-grafana-after-cache.jpeg` | Cache hit ratio y hits/misses en escenario after Redis |
 | `screenshots/14-frontend.jpeg` | Frontend React funcionando en `http://localhost:3002` |
 | `screenshots/15-api-docs.jpeg` | Swagger/API Docs funcionando en `http://localhost:8001/docs` |
+| `screenshots/16-grafana-cpu-memory-updated.jpeg` | Paneles Grafana de CPU y memoria con datos desde cAdvisor |
 
 ## CSV de Locust incluidos
 
