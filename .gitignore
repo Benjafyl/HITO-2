@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+.env
+
+# Node / React
+node_modules/
+frontend/dist/
+
+# Resultados de pruebas de carga (se generan al ejecutar Locust)
+results/*.csv
+results/*.json
+results/*.html
+results/*.png
+
+# Docker volumes (datos locales de postgres y grafana)
+postgres_data/
+grafana_data/
+
+# macOS
+.DS_Store
+
+# LaTeX auxiliares
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
