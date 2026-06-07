@@ -34,6 +34,14 @@ observabilidad.
 | `after-redis_stats_history.csv` | Historial temporal con Redis |
 | `after-redis_failures.csv` | Fallos con Redis |
 | `after-redis_exceptions.csv` | Excepciones con Redis |
+| `before-final_stats.csv` | Prueba final de carga sin cache |
+| `before-final_stats_history.csv` | Historial temporal final sin cache |
+| `before-final_failures.csv` | Fallos finales sin cache |
+| `before-final_exceptions.csv` | Excepciones finales sin cache |
+| `after-redis-final_stats.csv` | Prueba final de carga con Redis |
+| `after-redis-final_stats_history.csv` | Historial temporal final con Redis |
+| `after-redis-final_failures.csv` | Fallos finales con Redis |
+| `after-redis-final_exceptions.csv` | Excepciones finales con Redis |
 
 ## Evidencias recomendadas pendientes
 

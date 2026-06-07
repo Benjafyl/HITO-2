@@ -53,19 +53,30 @@ Desde Grafana:
 
 ## Tabla para completar
 
-Resultados locales disponibles en `results/`:
+Resultados locales finales recomendados para el informe:
+
+| Escenario | Requests /flights | Avg /flights | P95 /flights | RPS /flights | Fallos /flights |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Before sin cache final | 401 | 97902.61 ms | 268000 ms | 1.46 | 255 |
+| After Redis final | 26220 | 5649.99 ms | 6700 ms | 87.50 | 0 |
+
+Lectura tecnica final: bajo 1000 usuarios concurrentes, el escenario sin cache
+presento saturacion severa, baja tasa de procesamiento y fallos. Con Redis
+activado, la API mantuvo 0 fallos, mayor throughput y una reduccion relevante en
+latencia para `GET /flights`.
+
+Resultados locales anteriores disponibles en `results/`:
 
 | Escenario | Requests /flights | Avg /flights | P95 /flights | RPS /flights | Fallos /flights |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Before sin cache | 21928 | 7178.68 ms | 9300 ms | 73.17 | 0 |
 | After Redis | 19476 | 8218.20 ms | 11000 ms | 64.98 | 0 |
 
-Lectura tecnica: en esta ejecucion local no se observo una reduccion de latencia
-en el CSV de Locust, aunque si se verifico funcionamiento de Redis, cache hits,
-cache misses y 0 fallos. Para el informe, este resultado debe analizarse sin
-modificar datos: puede deberse a saturacion del entorno Docker Desktop local,
-carga residual entre pruebas, cache fria, o diferencias de recursos disponibles
-entre corridas.
+Lectura tecnica de la corrida anterior: en esa ejecucion local no se observo una
+reduccion de latencia en el CSV de Locust, aunque si se verifico funcionamiento
+de Redis, cache hits, cache misses y 0 fallos. Se conserva como evidencia
+historica, pero para el informe se recomienda usar los archivos `before-final_*`
+y `after-redis-final_*`.
 
 ## Capturas requeridas
 

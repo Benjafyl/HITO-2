@@ -1,0 +1,4 @@
+Method,Name,Error,Occurrences
+GET,/routes,HTTPError('500 Server Error: Internal Server Error for url: /routes'),66
+GET,/aircraft,HTTPError('500 Server Error: Internal Server Error for url: /aircraft'),24
+GET,/flights,CatchResponseError('Unexpected status 500'),255
