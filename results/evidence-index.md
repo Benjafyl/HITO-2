@@ -25,6 +25,8 @@ observabilidad.
 | `screenshots/14-frontend.jpeg` | Frontend React funcionando en `http://localhost:3002` |
 | `screenshots/15-api-docs.jpeg` | Swagger/API Docs funcionando en `http://localhost:8001/docs` |
 | `screenshots/16-grafana-cpu-memory-updated.jpeg` | Paneles Grafana de CPU y memoria con datos desde cAdvisor |
+| `screenshots/17-locust-before-final.jpeg` | Resumen final de Locust antes de la optimizacion con Redis |
+| `screenshots/18-locust-after-redis-final.jpeg` | Resumen final de Locust despues de la optimizacion con Redis |
 
 ## CSV de Locust incluidos
 
@@ -49,10 +51,9 @@ observabilidad.
 
 ## Evidencias recomendadas pendientes
 
-- Captura de `docker compose ps` con todos los servicios arriba.
-- Captura del frontend en `http://localhost:3002`.
-- Captura de Swagger/API Docs en `http://localhost:8001/docs`.
-- Captura del resumen final de Locust para before y after.
+No quedan capturas obligatorias pendientes para la entrega. Las evidencias
+principales de ejecucion, monitoreo, Redis, endpoints, frontend y Locust estan
+incluidas en esta carpeta.
 
 Nota: en Docker Desktop/WSL, cAdvisor puede exponer metricas con etiqueta `id`
 en vez de nombres de servicios Docker. El dashboard fue ajustado para mostrar
